@@ -21,7 +21,7 @@ alias venvs="echo "virtual_dh""
 
 # git commands
 alias gpom='git push origin master'
-alias gcm='git comitt -m'
+alias gcm='git commit -m'
 alias gl='git log'
 alias gs='git status'
 
