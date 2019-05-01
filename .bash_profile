@@ -18,9 +18,9 @@ alias sbash='source ~/.bash_profile'
 alias virtual_dh='source ~/.virtualenvs/DH_3.6.8/bin/activate'
 alias venvs="echo "virtual_dh""
 
-
 # git commands
 alias gpom='git push origin master'
+alias ga.='git add .'
 alias gcm='git commit -m'
 alias gl='git log'
 alias gs='git status'
@@ -30,6 +30,22 @@ alias piu='pip install -U'
 alias pi='pip install'
 alias pf='pip freeze'
 alias pfreq='pip freeze > requirements.txt'
+
+#better terminal
+alias f='open -a Finder ./'
+alias cd..='cd ../'                         # Go back 1 directory level (for fast typers)
+alias ..='cd ../'                           # Go back 1 directory level
+alias ...='cd ../../'                       # Go back 2 directory levels
+alias .3='cd ../../../'                     # Go back 3 directory levels
+alias .4='cd ../../../../'                  # Go back 4 directory levels
+alias .5='cd ../../../../../'               # Go back 5 directory levels
+alias .6='cd ../../../../../../'            # Go back 6 directory levels
+alias ~="cd ~"                              # ~:            Go Home
+alias c='clear'     
+
+#Folder management
+zipf () { zip -r "$1".zip "$1" ; }          # zipf:         To create a ZIP archive of a folder
+alias numFiles='echo $(ls -1 | wc -l)'      # numFiles:     Count of non-hidden files in current dir
 
 #functions
 function mkvenv() {
