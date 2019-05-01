@@ -1,5 +1,19 @@
+#show git branch name
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
 
-export PS1="\u:\w\$ "
+#show only current and parent directory
+PROMPT_COMMAND='case $PWD in
+        $HOME) HPWD="~";;
+        $HOME/*/*) HPWD="${PWD#"${PWD%/*/*}/"}";;
+        $HOME/*) HPWD="~/${PWD##*/}";;
+        /*/*/*) HPWD="${PWD#"${PWD%/*/*}/"}";;
+        *) HPWD="$PWD";;
+      esac'
+export PS1="\u: \$HPWD\[\033[0;36m\]\$(parse_git_branch)\[\033[00m\] $ "
+
+#export PS1="\u:\w\$ "
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
@@ -24,6 +38,8 @@ alias ga.='git add .'
 alias gcm='git commit -m'
 alias gl='git log'
 alias gs='git status'
+alias gb='git branch'
+alias gcheck='git checkout'
 
 # pip commands
 alias piu='pip install -U'
