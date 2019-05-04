@@ -29,8 +29,8 @@ alias ebash='subl ~/.bash_profile'
 alias sbash='source ~/.bash_profile'
 
 # virtual envs
-alias virtual_dh='source ~/.virtualenvs/DH_3.6.8/bin/activate'
-alias venvs="echo "virtual_dh""
+alias v_dh='source ~/.virtualenvs/DH_3.6.8/bin/activate'
+alias venvs="echo "v_dh""
 
 # git commands
 alias gpom='git push origin master'
@@ -58,6 +58,10 @@ alias .5='cd ../../../../../'               # Go back 5 directory levels
 alias .6='cd ../../../../../../'            # Go back 6 directory levels
 alias ~="cd ~"                              # ~:            Go Home
 alias c='clear'     
+
+#jupyter commands
+alias jl='jupyter lab'
+alias jn='jupyter notebook'
 
 #Folder management
 zipf () { zip -r "$1".zip "$1" ; }          # zipf:         To create a ZIP archive of a folder
