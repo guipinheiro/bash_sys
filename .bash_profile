@@ -30,10 +30,12 @@ alias sbash='source ~/.bash_profile'
 
 # virtual envs
 alias v_dh='source ~/.virtualenvs/DH_3.6.8/bin/activate'
-alias venvs="echo "v_dh""
+alias slis='source ~/.virtualenvs/superlists/bin/activate'
+alias venvs="echo "v_dh" "slis""
 
 # git commands
 alias gpom='git push origin master'
+alias gpall='git push origin --all'
 alias ga.='git add .'
 alias gcm='git commit -m'
 alias gl='git log'
