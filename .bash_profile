@@ -65,6 +65,9 @@ alias c='clear'
 alias jl='jupyter lab'
 alias jn='jupyter notebook'
 
+#python
+alias py='python3'
+
 #Folder management
 zipf () { zip -r "$1".zip "$1" ; }          # zipf:         To create a ZIP archive of a folder
 alias numFiles='echo $(ls -1 | wc -l)'      # numFiles:     Count of non-hidden files in current dir
