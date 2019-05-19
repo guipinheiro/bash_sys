@@ -1,3 +1,4 @@
+
 #show git branch name
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -11,16 +12,17 @@ PROMPT_COMMAND='case $PWD in
         /*/*/*) HPWD="${PWD#"${PWD%/*/*}/"}";;
         *) HPWD="$PWD";;
       esac'
-export PS1="\u: \$HPWD\[\033[0;36m\]\$(parse_git_branch)\[\033[00m\] $ "
+export PS1="Gui: \$HPWD\[\033[0;36m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 #export PS1="\u:\w\$ "
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+export PATH=$PATH:~/bin
+export PATH=$PATH:~/Library/Python/3.7/bin
+export EDITOR='subl -w'
 
-# Setting PATH for Python 3.6
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
-export PATH=$PATH
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+echo "source virtualenvwrapper.sh"
 
 #aliases
 
@@ -38,7 +40,7 @@ alias gpom='git push origin master'
 alias gpall='git push origin --all'
 alias ga.='git add .'
 alias gcm='git commit -m'
-alias gl='git log'
+alias gl='git lg'
 alias gs='git status'
 alias gb='git branch'
 alias gcheck='git checkout'
@@ -77,3 +79,9 @@ function mkvenv() {
 	read -p "Enter venv name:" name
 	python3 -m venv ~/.virtualenvs/$name
 }
+
+
+#Git formatting:
+#log:
+#git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
